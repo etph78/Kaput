@@ -383,7 +383,7 @@ def get_assets():
     wd = os.getcwd()
     st.session_state['working_directory'] = wd
 
-    img = 'Assets\\Pictures\\logo.png'
+    img = r'Assets/Pictures/logo.png'
     url = os.path.join(wd, img)
     image = Image.open(url)
     st.session_state['main_img'] = image
