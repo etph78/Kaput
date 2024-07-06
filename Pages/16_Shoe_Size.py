@@ -23,10 +23,6 @@ def calculate():
 
     df_men = df[df['מין'] == 'm']
     df_women = df[df['מין'] == 'f']
-    df_men_size = df_men['נעל']
-    df_women_size = df_women['נעל']
-    # st.write(df_men_size)
-    # st.write(df_women_size)
 
     men_shoe = st.session_state['shoe_size_to_cm_men']
     women_shoe = st.session_state['shoe_size_to_cm_women']
@@ -65,6 +61,7 @@ with st.container():
         with st.expander(f'Question :'):
             from PIL import Image
             image_size = (400, 250)
+            question_img = st.session_state['question_img']
 
             st.subheader('מה הכי קרוב שנגיע אם נחבר כף רגל אחת')
             st.subheader('? מכל אחד מאיתנו בקו ישר אחד')
@@ -72,32 +69,23 @@ with st.container():
                 col1, col2 = st.columns(2)
                 with col1:
                     st.header(':blue[רוחב שער כדורגל]')
-                    url = r'Assets\Pictures\goal.jfif'
-                    image = Image.open(url)
-                    new_image = image.resize(image_size)
-                    st.image(new_image, use_column_width='always')
+                    st.image(question_img['goal'].resize(image_size), use_column_width='always')
 
                 with col2:
                     st.header(':green[אורך גל תדר גלגלצ]')
-                    url = r'Assets\Pictures\wave.jpg'
-                    image = Image.open(url)
-                    new_image = image.resize(image_size)
-                    st.image(new_image, use_column_width='always')
+                    st.image(question_img['wave'].resize(image_size), use_column_width='always')
+
 
                 col3, col4 = st.columns(2)
                 with col3:
                     st.header(':red[אורך אוטובוס אקורדיון]')
-                    url = r'Assets\Pictures\bus.jpg'
-                    image = Image.open(url)
-                    new_image = image.resize(image_size)
-                    st.image(new_image, use_column_width='always')
+                    st.image(question_img['bus'].resize(image_size), use_column_width='always')
+
 
                 with col4:
                     st.header(':orange[רוחב תחת של 2 סוסים]')
-                    url = r'Assets\Pictures\horses.jfif'
-                    image = Image.open(url)
-                    new_image = image.resize(image_size)
-                    st.image(new_image, use_column_width='always')
+                    st.image(question_img['horses'].resize(image_size), use_column_width='always')
+
 
         with st.expander(f'Shoe Chart :'):
             men_shoe = st.session_state['shoe_size_to_cm_men']
@@ -149,12 +137,9 @@ with st.container():
 
             st.header(':blue[רוחב שער כדורגל]')
 
-            from PIL import Image
+            question_img = st.session_state['question_img']
             image_size = (400, 250)
-            url = r'Assets\Pictures\goal.jfif'
-            image = Image.open(url)
-            new_image = image.resize(image_size)
-            st.image(new_image, use_column_width='always')
+            st.image(question_img['goal'].resize(image_size), use_column_width='always')
 
             len_m = int(shoe_len / 100)
             st.header('')

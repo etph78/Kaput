@@ -99,13 +99,12 @@ with st.container():
 
             from PIL import Image
             image_size = (800, 600)
-            url = r'Assets\Pictures\criscros.jpg'
-            image = Image.open(url)
-            new_image = image.resize(image_size)
-            st.image(new_image, use_column_width='always')
+            question_img = st.session_state['question_img']
+            st.image(question_img['criscros'], use_column_width='always')
             # url = 'https://www.youtube.com/watch?v=010KyIQjkTk'
             # st_player(url)
-            st.audio(r'Assets\Audio\KrisKross.mp3', format="audio/mp3", loop=False, autoplay=False)
+            audio_urls = st.session_state['audio_urls']
+            st.audio(audio_urls.get('KrisKross'), format="audio/mp3", loop=False, autoplay=True)
 
 st.header(f'', divider='rainbow')
 from Kapoot import clock_run

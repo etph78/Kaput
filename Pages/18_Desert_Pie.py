@@ -116,7 +116,8 @@ with st.container():
         with st.expander(f'Knowledge :'):
 
             st.subheader('היית כבר אומרת עוגת תפוזים')
-            st.image(r'Assets\Pictures\porto.jpg')
+            question_img = st.session_state['question_img']
+            st.image(question_img['porto'], use_column_width='always')
 
 st.header(f'', divider='rainbow')
 from Kapoot import clock_run
