@@ -384,12 +384,12 @@ def main():
                        layout='wide',
                        )
 
-    wd = st.session_state['working_directory']
     img = 'Assets\\Pictures\\logo.png'
-    url = os.path.join(wd, img)
-    st.logo(url)
-    # st.logo('Assets\\Pictures\\logo.png')
-    st.image('Assets\\Pictures\\logo.jpeg', width=150)
+    url = os.path.join(st.session_state['working_directory'], img)
+    image = Image.open(url)
+    new_img = image.resize((240, 240))
+    st.logo(new_img)
+    
     st.header(f'Welcome to "Ka-Poot" Game {emoji}', divider='rainbow')
 
     read_score()
