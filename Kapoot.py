@@ -282,6 +282,7 @@ def sb_scores():
             sb_score_group3()
     return
 
+
 st.session_state['zodiac'] = {
     'דלי': 1,
     'דגים': 2,
@@ -379,7 +380,6 @@ st.session_state['working_directory'] = os.getcwd()
 
 def main():
     emoji = ':sloth:'
-    wd = st.session_state['working_directory']
     st.set_page_config(page_title="KaPoot",
                        page_icon=emoji,
                        layout='wide',
@@ -390,7 +390,11 @@ def main():
     image = Image.open(url)
     new_img = image.resize((240, 240))
     st.logo(new_img)
-    
+
+    img = r'Assets\Pictures\logo.jpeg'
+    url = os.path.join(st.session_state['working_directory'], img)
+    st.image(url, width=150)
+
     st.header(f'Welcome to "Ka-Poot" Game {emoji}', divider='rainbow')
 
     read_score()
@@ -401,43 +405,51 @@ def main():
 
         # Create three columns
         with st.expander(f'Groups'):
+            wd = st.session_state['working_directory']
+
             with st.container():
+
+                width = 100
                 col1, col2, col3 = st.columns(3)
                 with col1:
+
                     st.header(f'השולטים')
                     with st.container():
                         col11, col12 = st.columns(2)
                         with col11:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Elchai.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Avichai.png'), width=width)
+
                         with col12:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Arik.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Ofir.png'), width=width)
 
                 with col2:
                     st.header(f'אווירון', )
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Oren.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Maor.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Elad.png'), width=width)
+
                         with col22:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Igor.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Shimon.png'), width=width)
 
                 with col3:
                     st.header(f'אווירה')
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Shelly.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Roy.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Roman.png'), width=width)
+
                         with col22:
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            st.image('Assets/Pictures/logo.png', width=100)
-                            # st.image('Assets/Pictures/logo.png', width=100)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Liora.png'), width=width)
+                            st.image(os.path.join(wd, r'Assets/Pictures/Dvir.png'), width=width)
+                            # st.image(os.path.join(wd, r'Assets/Pictures/Eytan.png'), width=width)
 
         write_score()
 
