@@ -400,42 +400,42 @@ def get_assets():
     }
     st.session_state['group1_img'] = group1_img
     group2_img = {
-        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Oren.png')),
-        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Maor.png')),
-        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Elad.png')),
-        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Igor.png')),
-        '5': Image.open(os.path.join(wd, 'Assets\\Pictures\\Shimon.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Oren.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Maor.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Elad.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Igor.png')),
+        '5': Image.open(os.path.join(wd, r'Assets/Pictures/Shimon.png')),
     }
     st.session_state['group2_img'] = group2_img
     group3_img = {
-        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Shelly.png')),
-        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Roy.png')),
-        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Roman.png')),
-        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Liora.png')),
-        '5': Image.open(os.path.join(wd, 'Assets\\Pictures\\Dvir.png')),
-        '6': Image.open(os.path.join(wd, 'Assets\\Pictures\\Eytan.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Shelly.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Roy.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Roman.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Liora.png')),
+        '5': Image.open(os.path.join(wd, r'Assets/Pictures/Dvir.png')),
+        '6': Image.open(os.path.join(wd, r'Assets/Pictures/Eytan.png')),
     }
     st.session_state['group3_img'] = group3_img
 
     # Questions Images
     question_img = {
-        'bus': Image.open(os.path.join(wd, 'Assets\\Pictures\\bus.jpg')),
-        'criscros': Image.open(os.path.join(wd, 'Assets\\Pictures\\criscros.jpg')),
-        'goal': Image.open(os.path.join(wd, 'Assets\\Pictures\\goal.jfif')),
-        'horses': Image.open(os.path.join(wd, 'Assets\\Pictures\\horses.jfif')),
-        'porto': Image.open(os.path.join(wd, 'Assets\\Pictures\\porto.jpg')),
-        'wave': Image.open(os.path.join(wd, 'Assets\\Pictures\\wave.jpg')),
-        'Zodiac_Elements': Image.open(os.path.join(wd, 'Assets\\Pictures\\Zodiac_Elements.jpg')),
+        'bus': Image.open(os.path.join(wd, r'Assets/Pictures/bus.jpg')),
+        'criscros': Image.open(os.path.join(wd, r'Assets/Pictures/criscros.jpg')),
+        'goal': Image.open(os.path.join(wd, r'Assets/Pictures/goal.jfif')),
+        'horses': Image.open(os.path.join(wd, r'Assets/Pictures/horses.jfif')),
+        'porto': Image.open(os.path.join(wd, r'Assets/Pictures/porto.jpg')),
+        'wave': Image.open(os.path.join(wd, r'Assets/Pictures/wave.jpg')),
+        'Zodiac_Elements': Image.open(os.path.join(wd, r'Assets/Pictures/Zodiac_Elements.jpg')),
     }
     st.session_state['question_img'] = question_img
 
     # Audio Files
     audio_urls = {
-        'bip1': os.path.join(wd, 'Assets\\Audio\\bip1.wav'),
-        'bip2': os.path.join(wd, 'Assets\\Audio\\bip2.wav'),
-        'bip3': os.path.join(wd, 'Assets\\Audio\\bip3.wav'),
-        'bip4': os.path.join(wd, 'Assets\\Audio\\bip4.wav'),
-        'KrisKross': os.path.join(wd, 'Assets\\Audio\\KrisKross.wav'),
+        'bip1': os.path.join(wd, r'Assets/Audio/bip1.wav'),
+        'bip2': os.path.join(wd, r'Assets/Audio/bip2.wav'),
+        'bip3': os.path.join(wd, r'Assets/Audio/bip3.wav'),
+        'bip4': os.path.join(wd, r'Assets/Audio/bip4.wav'),
+        'KrisKross': os.path.join(wd, r'Assets/Audio/KrisKross.wav'),
     }
     st.session_state['audio_urls'] = audio_urls
 
