@@ -273,14 +273,18 @@ def scores():
 
 def sb_scores():
     # Create three columns
-    with st.container():
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            sb_score_group1()
-        with col2:
-            sb_score_group2()
-        with col3:
-            sb_score_group3()
+    sb_score_group1()
+    sb_score_group2()
+    sb_score_group3()
+    # with st.container():
+        # col1, col2, col3 = st.columns(3)
+        # with col1:
+        #     sb_score_group1()
+        # with col2:
+        #     sb_score_group2()
+        # with col3:
+        #     sb_score_group3()
+
     return
 
 
@@ -439,8 +443,44 @@ def get_assets():
     }
     st.session_state['audio_urls'] = audio_urls
 
+    # Game Pages
+    game_pages = {
+        '0': (os.path.join(wd, r'Kapoot.py'), 'Home Page'),
+        '1': (os.path.join(wd, r'Pages/01_Home_to_Netanel.py'), 'Home to Netanel'),
+        '2': (os.path.join(wd, r'Pages/02_Home_to_Shchakim.py'), 'Home to Shchakim'),
+        '3': (os.path.join(wd, r'Pages/03_Birth_Rate.py'), 'Birth Rate'),
+        '4': (os.path.join(wd, r'Pages/04_Height_Statistics.py'), 'Height Statistics'),
+        '5': (os.path.join(wd, r'Pages/05_Children_per_Floor.py'), 'Children on the Floor'),
+        '6': (os.path.join(wd, r'Pages/06_Fruit_Case.py'), 'Fruit Case'),
+        '7': (os.path.join(wd, r'Pages/07_Work Time.py'), ''),
+        '8': (os.path.join(wd, r'Pages/08_Animals_Farm.py'), ''),
+        '9': (os.path.join(wd, r'Pages/09_Languages.py'), ''),
+        '10': (os.path.join(wd, r'Pages/10_Family_Tree.py'), ''),
+        '11': (os.path.join(wd, r'Pages/11_Weekend_Most_wanted.py'), ''),
+        '12': (os.path.join(wd, r'Pages/12_My Last Flight.py'), ''),
+        '13': (os.path.join(wd, r'Pages/13_Team_Sugar_Pie.py'), ''),
+        '14': (os.path.join(wd, r'Pages/14_Colors_Pick.py'), ''),
+        '15': (os.path.join(wd, r'Pages/15_Booze Most Wanted.py'), ''),
+        '16': (os.path.join(wd, r'Pages/16_Shoe_Size.py'), ''),
+        '17': (os.path.join(wd, r'Pages/17_Zodiac_Element.py'), ''),
+        '18': (os.path.join(wd, r'Pages/18_Desert_Pie.py'), ''),
+        '19': (os.path.join(wd, r'Pages/19_Car_Brand.py'), ''),
+        '20': (os.path.join(wd, r'Pages/20_TV_Show.py'), ''),
+        '21': (os.path.join(wd, r'Pages/21_Holiday_Most_Wanted.py'), ''),
+        '22': (os.path.join(wd, r'Pages/22_Trivia_Question.py'), ''),
+    }
+    st.session_state['game_pages'] = game_pages
     return
 
+
+def set_sidebar_menu():
+    with (st.container()):
+        game_pages = st.session_state['game_pages']
+        length = len(game_pages)
+
+        for i in range(length):
+            link = game_pages[f'{i}']
+            st.sidebar.page_link(link[0], label=link[1])
 
 
 def main():
@@ -456,6 +496,9 @@ def main():
         get_assets()
 
     st.logo(st.session_state['logo_img'])
+
+    set_sidebar_menu()
+    st.sidebar.divider()
 
     st.image(st.session_state['main_img'], width=300)
 
@@ -536,9 +579,6 @@ def main():
         st.write(st.session_state['df_data'])
 
     sb = st.sidebar
-    sb.header('')
-    sb.header('')
-
     reset_all = sb.button(label="Reset ...", type="primary")
     if reset_all:
         score_df = st.session_state['score_df']
