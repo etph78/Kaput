@@ -385,7 +385,7 @@ def main():
                        )
 
     wd = st.session_state['working_directory']
-    img = r'Assets\Pictures\logo.jpeg'
+    img = r'Assets\Pictures\logo.png'
     url = os.path.join(wd, img)
     st.logo(url)
     # st.logo('Assets\\Pictures\\logo.png')
