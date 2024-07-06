@@ -281,7 +281,6 @@ def sb_scores():
             sb_score_group3()
     return
 
-
 st.session_state['zodiac'] = {
     'דלי': 1,
     'דגים': 2,
@@ -375,15 +374,21 @@ st.session_state['shoe_size_to_cm_women'] = {
     'cm': [21.2, 22.0, 22.4, 23.0, 23.7, 24.6, 25.0, 25.8, 26.4, 27.1, 27.7, 28.4, ],
 }
 
+st.session_state['working_directory'] = os.getcwd()
 
 def main():
     emoji = ':sloth:'
-    st.logo('Assets\\Pictures\\logo.png')
+    wd = st.session_state['working_directory']
     st.set_page_config(page_title="KaPoot",
                        page_icon=emoji,
                        layout='wide',
                        )
 
+    wd = st.session_state['working_directory']
+    img = r'Assets\Pictures\logo.jpeg'
+    url = os.path.join(wd, img)
+    st.logo(url)
+    # st.logo('Assets\\Pictures\\logo.png')
     st.image('Assets\\Pictures\\logo.jpeg', width=150)
     st.header(f'Welcome to "Ka-Poot" Game {emoji}', divider='rainbow')
 
