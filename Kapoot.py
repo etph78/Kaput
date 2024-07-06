@@ -378,7 +378,7 @@ st.session_state['shoe_size_to_cm_women'] = {
 
 def main():
     emoji = ':sloth:'
-    st.logo('Assets\\Pictures\\logo.jpeg')
+    st.logo('Assets\\Pictures\\logo.png')
     st.set_page_config(page_title="KaPoot",
                        page_icon=emoji,
                        layout='wide',
@@ -402,36 +402,36 @@ def main():
                     with st.container():
                         col11, col12 = st.columns(2)
                         with col11:
-                            st.image('Assets/Pictures/Elchai.png', width=100)
-                            st.image('Assets/Pictures/Avichai.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
                         with col12:
-                            st.image('Assets/Pictures/Arik.png', width=100)
-                            st.image('Assets/Pictures/Ofir.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
 
                 with col2:
                     st.header(f'אווירון', )
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image('Assets/Pictures/Oren.png', width=100)
-                            st.image('Assets/Pictures/Maor.png', width=100)
-                            st.image('Assets/Pictures/Elad.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
                         with col22:
-                            st.image('Assets/Pictures/Igor.png', width=100)
-                            st.image('Assets/Pictures/Shimon.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
 
                 with col3:
                     st.header(f'אווירה')
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image('Assets/Pictures/Shelly.png', width=100)
-                            st.image('Assets/Pictures/Roy.png', width=100)
-                            st.image('Assets/Pictures/Roman.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
                         with col22:
-                            st.image('Assets/Pictures/Liora.png', width=100)
-                            st.image('Assets/Pictures/Dvir.png', width=100)
-                            # st.image('Assets/Pictures/Eytan.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            st.image('Assets/Pictures/logo.png', width=100)
+                            # st.image('Assets/Pictures/logo.png', width=100)
 
         write_score()
 
