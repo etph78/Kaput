@@ -1,0 +1,34 @@
+# basic libraries
+pandas
+numpy
+scipy
+nodejs
+jsons
+pillow
+flask
+Jinja2
+xmltodict
+openpyxl
+tornado
+
+# GUI libraries
+streamlit
+dash
+bokeh
+matplotlib
+plotly
+seaborn
+streamz
+holoviews
+hvplot
+graphviz
+streamlit_player
+streamlit-player
+
+# Geographic libraries
+geopy
+great-circle-calculator
+
+# AI libraries
+scikit-learn
+umap-learn
