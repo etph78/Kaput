@@ -393,10 +393,10 @@ def get_assets():
 
     # Teams Images
     group1_img = {
-        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Elchai.png')),
-        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Avichai.png')),
-        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Arik.png')),
-        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Ofir.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Elchai.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Avichai.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Arik.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Ofir.png')),
     }
     st.session_state['group1_img'] = group1_img
     group2_img = {
