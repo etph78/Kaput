@@ -444,6 +444,8 @@ def get_assets():
     st.session_state['audio_urls'] = audio_urls
 
     # Game Pages
+    st.session_state['enable_sb_menu'] = True
+
     game_pages = {
         '0': (r'Kapoot.py', 'Home Page'),
         '1': (r'Pages/01_Home_to_Netanel.py', 'Home to Netanel'),
@@ -497,7 +499,6 @@ def main():
 
     st.logo(st.session_state['logo_img'])
 
-    st.session_state['enable_sb_menu'] = False
     if st.session_state['enable_sb_menu']:
         set_sidebar_menu()
         st.sidebar.divider()
