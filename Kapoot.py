@@ -23,6 +23,8 @@ def clock_run():
         bip2_flag = False
 
         for percent_complete in range(100):
+            audio_urls = st.session_state['audio_urls']
+
             time_left = seconds * (1 - (percent_complete / 100))
             time.sleep(seconds / 100)
             my_bar.progress(percent_complete, text=f'{time_left:0.0f} [sec]')
@@ -31,14 +33,14 @@ def clock_run():
             if time_left < 13:
                 if bip1_flag == False:
                     bip1_flag = True
-                    st.audio(r'Assets\Audio\bip2.wav', format="audio/wav", loop=False, autoplay=True)
+                    st.audio(audio_urls['bip2'], format="audio/wav", loop=False, autoplay=True)
                 else:
                     pass
 
             if time_left < 3:
                 if bip2_flag == False:
                     bip2_flag = True
-                    st.audio(r'Assets\Audio\bip4.wav', format="audio/wav", loop=False, autoplay=True)
+                    st.audio(audio_urls['bip4'], format="audio/wav", loop=False, autoplay=True)
                 else:
                     pass
 
@@ -49,7 +51,6 @@ def clock_run():
 
 
 def read_score():
-    import pandas as pd
     # st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
     st.session_state['folder'] = r''
     st.session_state['file'] = r'score.csv'
@@ -376,7 +377,71 @@ st.session_state['shoe_size_to_cm_women'] = {
     'cm': [21.2, 22.0, 22.4, 23.0, 23.7, 24.6, 25.0, 25.8, 26.4, 27.1, 27.7, 28.4, ],
 }
 
-st.session_state['working_directory'] = os.getcwd()
+
+def get_assets():
+
+    wd = os.getcwd()
+    st.session_state['working_directory'] = wd
+
+    img = 'Assets\\Pictures\\logo.png'
+    url = os.path.join(wd, img)
+    image = Image.open(url)
+    st.session_state['main_img'] = image
+
+    logo_img = image.resize((240, 240))
+    st.session_state['logo_img'] = logo_img
+
+    # Teams Images
+    group1_img = {
+        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Elchai.png')),
+        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Avichai.png')),
+        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Arik.png')),
+        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Ofir.png')),
+    }
+    st.session_state['group1_img'] = group1_img
+    group2_img = {
+        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Oren.png')),
+        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Maor.png')),
+        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Elad.png')),
+        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Igor.png')),
+        '5': Image.open(os.path.join(wd, 'Assets\\Pictures\\Shimon.png')),
+    }
+    st.session_state['group2_img'] = group2_img
+    group3_img = {
+        '1': Image.open(os.path.join(wd, 'Assets\\Pictures\\Shelly.png')),
+        '2': Image.open(os.path.join(wd, 'Assets\\Pictures\\Roy.png')),
+        '3': Image.open(os.path.join(wd, 'Assets\\Pictures\\Roman.png')),
+        '4': Image.open(os.path.join(wd, 'Assets\\Pictures\\Liora.png')),
+        '5': Image.open(os.path.join(wd, 'Assets\\Pictures\\Dvir.png')),
+        '6': Image.open(os.path.join(wd, 'Assets\\Pictures\\Eytan.png')),
+    }
+    st.session_state['group3_img'] = group3_img
+
+    # Questions Images
+    question_img = {
+        'bus': Image.open(os.path.join(wd, 'Assets\\Pictures\\bus.jpg')),
+        'criscros': Image.open(os.path.join(wd, 'Assets\\Pictures\\criscros.jpg')),
+        'goal': Image.open(os.path.join(wd, 'Assets\\Pictures\\goal.jfif')),
+        'horses': Image.open(os.path.join(wd, 'Assets\\Pictures\\horses.jfif')),
+        'porto': Image.open(os.path.join(wd, 'Assets\\Pictures\\porto.jpg')),
+        'wave': Image.open(os.path.join(wd, 'Assets\\Pictures\\wave.jpg')),
+        'Zodiac_Elements': Image.open(os.path.join(wd, 'Assets\\Pictures\\Zodiac_Elements.jpg')),
+    }
+    st.session_state['question_img'] = question_img
+
+    # Audio Files
+    audio_urls = {
+        'bip1': os.path.join(wd, 'Assets\\Audio\\bip1.wav'),
+        'bip2': os.path.join(wd, 'Assets\\Audio\\bip2.wav'),
+        'bip3': os.path.join(wd, 'Assets\\Audio\\bip3.wav'),
+        'bip4': os.path.join(wd, 'Assets\\Audio\\bip4.wav'),
+        'KrisKross': os.path.join(wd, 'Assets\\Audio\\KrisKross.wav'),
+    }
+    st.session_state['audio_urls'] = audio_urls
+
+    return
+
+
 
 def main():
     emoji = ':sloth:'
@@ -385,15 +450,14 @@ def main():
                        layout='wide',
                        )
 
-    img = 'Assets\\Pictures\\logo.png'
-    url = os.path.join(st.session_state['working_directory'], img)
-    image = Image.open(url)
-    new_img = image.resize((240, 240))
-    st.logo(new_img)
+    if 'assets' in st.session_state:
+        pass
+    else:
+        get_assets()
 
-    img = r'Assets\Pictures\logo.jpeg'
-    url = os.path.join(st.session_state['working_directory'], img)
-    st.image(url, width=150)
+    st.logo(st.session_state['logo_img'])
+
+    st.image(st.session_state['main_img'], width=300)
 
     st.header(f'Welcome to "Ka-Poot" Game {emoji}', divider='rainbow')
 
@@ -408,8 +472,10 @@ def main():
             wd = st.session_state['working_directory']
 
             with st.container():
-
-                width = 100
+                group1_img = st.session_state['group1_img']
+                group2_img = st.session_state['group2_img']
+                group3_img = st.session_state['group3_img']
+                width = 200
                 col1, col2, col3 = st.columns(3)
                 with col1:
 
@@ -417,39 +483,38 @@ def main():
                     with st.container():
                         col11, col12 = st.columns(2)
                         with col11:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Elchai.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Avichai.png'), width=width)
+                            st.image(group1_img['1'], width=width)
+                            st.image(group1_img['2'], width=width)
 
                         with col12:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Arik.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Ofir.png'), width=width)
+                            st.image(group1_img['3'], width=width)
+                            st.image(group1_img['4'], width=width)
 
                 with col2:
                     st.header(f'אווירון', )
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Oren.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Maor.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Elad.png'), width=width)
+                            st.image(group2_img['1'], width=width)
+                            st.image(group2_img['2'], width=width)
+                            st.image(group2_img['3'], width=width)
 
                         with col22:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Igor.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Shimon.png'), width=width)
+                            st.image(group2_img['4'], width=width)
+                            st.image(group2_img['5'], width=width)
 
                 with col3:
                     st.header(f'אווירה')
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Shelly.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Roy.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Roman.png'), width=width)
-
+                            st.image(group3_img['1'], width=width)
+                            st.image(group3_img['2'], width=width)
+                            st.image(group3_img['3'], width=width)
                         with col22:
-                            st.image(os.path.join(wd, r'Assets/Pictures/Liora.png'), width=width)
-                            st.image(os.path.join(wd, r'Assets/Pictures/Dvir.png'), width=width)
-                            # st.image(os.path.join(wd, r'Assets/Pictures/Eytan.png'), width=width)
+                            st.image(group3_img['4'], width=width)
+                            st.image(group3_img['5'], width=width)
+                            # st.image(group3_img['6'], width=width)
 
         write_score()
 
