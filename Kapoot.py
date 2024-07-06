@@ -445,8 +445,8 @@ def get_assets():
 
     # Game Pages
     game_pages = {
-        '0': (os.path.join(wd, r'Kapoot.py'), 'Home Page'),
-        '1': (os.path.join(wd, r'Pages/01_Home_to_Netanel.py'), 'Home to Netanel'),
+        '0': (r'Kapoot.py', 'Home Page'),
+        '1': (r'Pages/01_Home_to_Netanel.py', 'Home to Netanel'),
         '2': (os.path.join(wd, r'Pages/02_Home_to_Shchakim.py'), 'Home to Shchakim'),
         '3': (os.path.join(wd, r'Pages/03_Birth_Rate.py'), 'Birth Rate'),
         '4': (os.path.join(wd, r'Pages/04_Height_Statistics.py'), 'Height Statistics'),
