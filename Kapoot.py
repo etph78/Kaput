@@ -452,22 +452,22 @@ def get_assets():
         '4': (r'Pages/04_Height_Statistics.py', 'Height Statistics'),
         '5': (r'Pages/05_Children_per_Floor.py', 'Children on the Floor'),
         '6': (r'Pages/06_Fruit_Case.py', 'Fruit Case'),
-        '7': (r'Pages/07_Work Time.py', ''),
-        '8': (r'Pages/08_Animals_Farm.py', ''),
-        '9': (r'Pages/09_Languages.py', ''),
-        '10': (r'Pages/10_Family_Tree.py', ''),
-        '11': (r'Pages/11_Weekend_Most_wanted.py', ''),
-        '12': (r'Pages/12_My Last Flight.py', ''),
-        '13': (r'Pages/13_Team_Sugar_Pie.py', ''),
-        '14': (r'Pages/14_Colors_Pick.py', ''),
-        '15': (r'Pages/15_Booze Most Wanted.py', ''),
-        '16': (r'Pages/16_Shoe_Size.py', ''),
-        '17': (r'Pages/17_Zodiac_Element.py', ''),
-        '18': (r'Pages/18_Desert_Pie.py', ''),
-        '19': (r'Pages/19_Car_Brand.py', ''),
-        '20': (r'Pages/20_TV_Show.py', ''),
-        '21': (r'Pages/21_Holiday_Most_Wanted.py', ''),
-        '22': (r'Pages/22_Trivia_Question.py', ''),
+        '7': (r'Pages/07_Work_Time.py', 'Work_Time'),
+        '8': (r'Pages/08_Animals_Farm.py', 'Animals_Farm'),
+        '9': (r'Pages/09_Languages.py', 'Languages'),
+        '10': (r'Pages/10_Family_Tree.py', 'Family_Tree'),
+        '11': (r'Pages/11_Weekend_Most_wanted.py', 'Weekend_Most_wanted'),
+        '12': (r'Pages/12_My_Last_Flight.py', 'My_Last_Flight'),
+        '13': (r'Pages/13_Team_Sugar_Pie.py', 'Team_Sugar_Pie'),
+        '14': (r'Pages/14_Colors_Pick.py', 'Colors_Pick'),
+        '15': (r'Pages/15_Booze_Most_Wanted.py', 'Booze_Most_Wanted'),
+        '16': (r'Pages/16_Shoe_Size.py', 'Shoe_Size'),
+        '17': (r'Pages/17_Zodiac_Element.py', 'Zodiac_Element'),
+        '18': (r'Pages/18_Desert_Pie.py', 'Desert_Pie'),
+        '19': (r'Pages/19_Car_Brand.py', 'Car_Brand'),
+        '20': (r'Pages/20_TV_Show.py', 'TV_Show'),
+        '21': (r'Pages/21_Holiday_Most_Wanted.py', 'Holiday_Most_Wanted'),
+        '22': (r'Pages/22_Trivia_Question.py', 'Trivia_Question'),
     }
     st.session_state['game_pages'] = game_pages
     return
@@ -497,8 +497,10 @@ def main():
 
     st.logo(st.session_state['logo_img'])
 
-    set_sidebar_menu()
-    st.sidebar.divider()
+    st.session_state['enable_sb_menu'] = False
+    if st.session_state['enable_sb_menu']:
+        set_sidebar_menu()
+        st.sidebar.divider()
 
     st.image(st.session_state['main_img'], width=300)
 
