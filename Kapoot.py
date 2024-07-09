@@ -497,11 +497,13 @@ def get_assets():
 def set_sidebar_menu():
     with (st.container()):
         my_files = os.listdir('Pages')
-        st.write(my_files)
+        # st.write(my_files)
         # st.write(type(files))
 
         for my_file in my_files:
             st.write(my_file)
+            my_link = f'Pages/{my_file}'
+            st.sidebar.page_link(my_link, label=my_link)
 
         #     my_page = game_pages[f'{i}']
         #     st.write(my_page)
@@ -514,14 +516,14 @@ def set_sidebar_menu():
         game_pages = st.session_state['game_pages']
         length = len(game_pages)
 
-        for i in range(length):
-            my_page = game_pages[f'{i}']
-            st.write(my_page)
-            my_link = my_page[0]
-            st.write(my_link)
-            my_label = my_page[1]
-            st.write(my_label)
-            st.sidebar.page_link(my_link, label=my_label)
+        # for i in range(length):
+            # my_page = game_pages[f'{i}']
+            # st.write(my_page)
+            # my_link = my_page[0]
+            # st.write(my_link)
+            # my_label = my_page[1]
+            # st.write(my_label)
+            # st.sidebar.page_link(my_link, label=my_label)
 
 
 def main():
