@@ -500,8 +500,13 @@ def set_sidebar_menu():
         length = len(game_pages)
 
         for i in range(length):
-            link = game_pages[f'{i}']
-            st.sidebar.page_link(link[0], label=link[1])
+            my_page = game_pages[f'{i}']
+            st.write(my_page)
+            my_link = my_page[0]
+            st.write(my_link)
+            my_label = my_page[1]
+            st.write(my_label)
+            st.sidebar.page_link(my_link, label=my_label)
 
 
 def main():
