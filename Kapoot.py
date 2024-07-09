@@ -496,7 +496,7 @@ def get_assets():
 
 def set_sidebar_menu():
     with (st.container()):
-        my_files = os.listdir('Pages')
+        my_files = os.listdir('/pages')
         # st.write(my_files)
         # st.write(type(files))
 
