@@ -496,6 +496,9 @@ def get_assets():
 
 def set_sidebar_menu():
     with (st.container()):
+        files = os.listdir('Pages')
+        st.write(files)
+
         game_pages = st.session_state['game_pages']
         length = len(game_pages)
 
