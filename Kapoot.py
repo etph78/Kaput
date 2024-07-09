@@ -280,10 +280,13 @@ def scores():
     with st.container():
         col1, col2, col3 = st.columns(3)
         with col1:
+            st.header(f'השולטים')
             score_group1()
         with col2:
+            st.header(f'אוויר')
             score_group2()
         with col3:
+            st.header(f'אווירון')
             score_group3()
 
     # score_df = st.session_state['score_df']
@@ -542,9 +545,9 @@ def main():
 
     st.logo(st.session_state['logo_img'])
 
-    if st.session_state['enable_sb_menu']:
-        set_sidebar_menu()
-        st.sidebar.divider()
+    # if st.session_state['enable_sb_menu']:
+    #     set_sidebar_menu()
+    #     st.sidebar.divider()
 
     st.image(st.session_state['main_img'], width=300)
 
@@ -558,7 +561,6 @@ def main():
 
         # Create three columns
         with st.expander(f'Groups'):
-            wd = st.session_state['working_directory']
 
             with st.container():
                 group1_img = st.session_state['group1_img']
@@ -567,8 +569,6 @@ def main():
                 width = 200
                 col1, col2, col3 = st.columns(3)
                 with col1:
-
-                    st.header(f'השולטים')
                     with st.container():
                         col11, col12 = st.columns(2)
                         with col11:
@@ -580,7 +580,6 @@ def main():
                             st.image(group1_img['4'], width=width)
 
                 with col2:
-                    st.header(f'אווירון', )
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
@@ -593,7 +592,6 @@ def main():
                             st.image(group2_img['5'], width=width)
 
                 with col3:
-                    st.header(f'אווירה')
                     with st.container():
                         col21, col22 = st.columns(2)
                         with col21:
