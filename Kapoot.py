@@ -467,28 +467,28 @@ def get_assets():
     st.session_state['enable_sb_menu'] = True
     game_pages = {
         '0': (r'Kapoot.py', 'Home Page'),
-        '1': (r'pages/01_Home_to_Netanel.py', 'Home to Netanel'),
-        '2': (r'pages/02_Home_to_Shchakim.py', 'Home to Shchakim'),
-        '3': (r'pages/03_Birth_Rate.py', 'Birth Rate'),
-        '4': (r'pages/04_Height_Statistics.py', 'Height Statistics'),
-        '5': (r'pages/05_Children_per_Floor.py', 'Children on the Floor'),
-        '6': (r'pages/06_Fruit_Case.py', 'Fruit Case'),
-        '7': (r'pages/07_Work_Time.py', 'Work_Time'),
-        '8': (r'pages/08_Animals_Farm.py', 'Animals_Farm'),
-        '9': (r'pages/09_Languages.py', 'Languages'),
-        '10': (r'pages/10_Family_Tree.py', 'Family_Tree'),
-        '11': (r'pages/11_Weekend_Most_wanted.py', 'Weekend_Most_wanted'),
-        '12': (r'pages/12_My_Last_Flight.py', 'My_Last_Flight'),
-        '13': (r'pages/13_Team_Sugar_Pie.py', 'Team_Sugar_Pie'),
-        '14': (r'pages/14_Colors_Pick.py', 'Colors_Pick'),
-        '15': (r'pages/15_Booze_Most_Wanted.py', 'Booze_Most_Wanted'),
-        '16': (r'pages/16_Shoe_Size.py', 'Shoe_Size'),
-        '17': (r'pages/17_Zodiac_Element.py', 'Zodiac_Element'),
-        '18': (r'pages/18_Desert_Pie.py', 'Desert_Pie'),
-        '19': (r'pages/19_Car_Brand.py', 'Car_Brand'),
-        '20': (r'pages/20_TV_Show.py', 'TV_Show'),
-        '21': (r'pages/21_Holiday_Most_Wanted.py', 'Holiday_Most_Wanted'),
-        '22': (r'pages/22_Trivia_Question.py', 'Trivia_Question'),
+        '1': (r'Pages/01_Home_to_Netanel.py', 'Home to Netanel'),
+        '2': (r'Pages/02_Home_to_Shchakim.py', 'Home to Shchakim'),
+        '3': (r'Pages/03_Birth_Rate.py', 'Birth Rate'),
+        '4': (r'Pages/04_Height_Statistics.py', 'Height Statistics'),
+        '5': (r'Pages/05_Children_per_Floor.py', 'Children on the Floor'),
+        '6': (r'Pages/06_Fruit_Case.py', 'Fruit Case'),
+        '7': (r'Pages/07_Work_Time.py', 'Work_Time'),
+        '8': (r'Pages/08_Animals_Farm.py', 'Animals_Farm'),
+        '9': (r'Pages/09_Languages.py', 'Languages'),
+        '10': (r'Pages/10_Family_Tree.py', 'Family_Tree'),
+        '11': (r'Pages/11_Weekend_Most_wanted.py', 'Weekend_Most_wanted'),
+        '12': (r'Pages/12_My_Last_Flight.py', 'My_Last_Flight'),
+        '13': (r'Pages/13_Team_Sugar_Pie.py', 'Team_Sugar_Pie'),
+        '14': (r'Pages/14_Colors_Pick.py', 'Colors_Pick'),
+        '15': (r'Pages/15_Booze_Most_Wanted.py', 'Booze_Most_Wanted'),
+        '16': (r'Pages/16_Shoe_Size.py', 'Shoe_Size'),
+        '17': (r'Pages/17_Zodiac_Element.py', 'Zodiac_Element'),
+        '18': (r'Pages/18_Desert_Pie.py', 'Desert_Pie'),
+        '19': (r'Pages/19_Car_Brand.py', 'Car_Brand'),
+        '20': (r'Pages/20_TV_Show.py', 'TV_Show'),
+        '21': (r'Pages/21_Holiday_Most_Wanted.py', 'Holiday_Most_Wanted'),
+        '22': (r'Pages/22_Trivia_Question.py', 'Trivia_Question'),
     }
     st.session_state['game_pages'] = game_pages
     return
@@ -501,7 +501,7 @@ def set_sidebar_menu():
         # st.write(type(files))
         # my_link = 'Kaput.py'
         # st.sidebar.page_link(my_link, label=my_link)
-
+        #
         # for my_file in my_files:
         #     # st.write(my_file)
         #     my_link = f'pages/{my_file}'
@@ -520,11 +520,11 @@ def set_sidebar_menu():
 
         for i in range(length):
             my_page = game_pages[f'{i}']
-            st.write(my_page)
+            # st.write(my_page)
             my_link = my_page[0]
-            st.write(my_link)
+            # st.write(my_link)
             my_label = my_page[1]
-            st.write(my_label)
+            # st.write(my_label)
             st.sidebar.page_link(my_link, label=my_label)
 
 
