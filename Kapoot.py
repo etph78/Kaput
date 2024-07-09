@@ -541,7 +541,7 @@ def main():
 
     st.image(st.session_state['main_img'], width=300)
 
-    st.header(f'Welcome to "Ka-Poot" Game {emoji}', divider='rainbow')
+    st.header(f'Welcome to "Ka-Put" Game {emoji}', divider='rainbow')
 
     read_score()
     scores()
