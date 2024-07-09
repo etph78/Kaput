@@ -91,7 +91,7 @@ with st.container():
 
         with st.expander(f'Question :'):
             st.subheader('? כמה לא ידעו איזה אלמנט הם')
-            st.subheader('אוויר \ אדמה \ מים \ אש')
+            st.subheader('אוויר - אדמה - מים - אש')
             with st.container():
                 col1, col2 = st.columns(2)
                 with col1:

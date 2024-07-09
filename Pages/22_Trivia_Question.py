@@ -104,7 +104,7 @@ with st.container():
             # url = 'https://www.youtube.com/watch?v=010KyIQjkTk'
             # st_player(url)
             audio_urls = st.session_state['audio_urls']
-            st.audio(audio_urls.get('KrisKross'), format="audio/mp3", loop=False, autoplay=True)
+            st.audio(audio_urls.get('KrisKross.mp3'), format="audio/mp3", loop=False, autoplay=True)
 
 st.header(f'', divider='rainbow')
 from Kapoot import clock_run

@@ -14,11 +14,6 @@ st.set_page_config(page_title=title,
 st.header(f'{title} {emoji}', divider='rainbow')
 
 from Kapoot import sb_scores, set_sidebar_menu
-
-if st.session_state['enable_sb_menu']:
-    set_sidebar_menu()
-    st.sidebar.divider()
-
 sb_scores()
 
 # @st.cache_data
