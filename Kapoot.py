@@ -464,7 +464,7 @@ def get_assets():
     st.session_state['audio_urls'] = audio_urls
 
     # Game Pages
-    st.session_state['enable_sb_menu'] = True
+    st.session_state['enable_sb_menu'] = False
     game_pages = {
         '0': (r'Kapoot.py', 'Home Page'),
         '1': (r'pages/01_Home_to_Netanel.py', 'Home to Netanel'),
@@ -477,7 +477,7 @@ def get_assets():
         '8': (r'pages/08_Animals_Farm.py', 'Animals Farm'),
         '9': (r'pages/09_Languages.py', 'Languages'),
         '10': (r'pages/10_Family_Tree.py', 'Family Tree'),
-        '11': (r'pages/11_Weekend_Most_wanted.py', 'Weekend Most_wanted'),
+        '11': (r'pages/11_Weekend_Most_wanted.py', 'Weekend Most wanted'),
         '12': (r'pages/12_My_Last_Flight.py', 'My Last Flight'),
         '13': (r'pages/13_Team_Sugar_Pie.py', 'Team Sugar Pie'),
         '14': (r'pages/14_Colors_Pick.py', 'Colors_Pick'),
