@@ -51,13 +51,7 @@ def clock_run():
 
 
 def read_score():
-    # st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
-    # st.session_state['folder'] = r''
-    # st.session_state['file'] = r'score.csv'
-    #
-    # folder = st.session_state['folder']
-    # file = st.session_state['file']
-    # score_file = os.path.join(folder, file)
+
     score_file = st.session_state['score_file']
 
     file_exist = os.path.isfile(score_file)
@@ -102,12 +96,8 @@ def write_score():
 def get_data():
     import pandas as pd
 
-    # st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
-    # st.session_state['file'] = r'Kapoot.xlsx'
-
-    # folder = st.session_state['folder']
     file = r'Kapoot.xlsx'
-    # xls_file = os.path.join(folder, file)
+
     st.session_state['data_file'] = file
 
     file_exist = os.path.isfile(file)
@@ -533,7 +523,7 @@ def get_assets():
 
 def main():
     emoji = ':sloth:'
-    st.set_page_config(page_title="KaPoot",
+    st.set_page_config(page_title="Ka-Put",
                        page_icon=emoji,
                        layout='wide',
                        )
@@ -607,7 +597,7 @@ def main():
 
     with st.expander(f'Rules'):
         st.header('Rules:')
-        st.subheader('1. You Dont Talk about KaPoot Club')
+        st.subheader('1. You Dont Talk about Ka-Put Club')
         st.subheader('2. May the Winner - Win')
         st.subheader('3. Cheating is Fun', )
         st.subheader('4. One Answer for All', )
