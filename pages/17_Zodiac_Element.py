@@ -4,7 +4,7 @@ import streamlit as st
 
 emoji = ':fire::ocean::seedling::wind_blowing_face:'
 title = 'Zodiac & Elements'
-st.logo('Assets\\Pictures\\logo.jpeg')
+st.logo(st.session_state['logo_img'])
 st.set_page_config(page_title=title,
                    page_icon=emoji,
                    layout='wide',

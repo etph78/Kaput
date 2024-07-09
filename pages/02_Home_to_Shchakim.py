@@ -6,7 +6,7 @@ import great_circle_calculator.great_circle_calculator as gcc
 
 emoji = ':milky_way:'
 title = 'From Home to Shchakim'
-st.logo('Assets\\Pictures\\logo.jpeg')
+st.logo(st.session_state['logo_img'])
 st.set_page_config(page_title=title,
                    page_icon=emoji,
                    layout='wide',

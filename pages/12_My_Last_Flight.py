@@ -6,7 +6,7 @@ import plotly.express as px
 
 emoji = ':airplane_arriving::cloud::airplane_departure::cloud::airplane_arriving:'
 title = 'My Last Flight'
-st.logo('Assets\\Pictures\\logo.jpeg')
+st.logo(st.session_state['logo_img'])
 st.set_page_config(page_title=title,
                    page_icon=emoji,
                    layout='wide',
