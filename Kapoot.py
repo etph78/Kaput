@@ -52,13 +52,13 @@ def clock_run():
 
 def read_score():
     # st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
-    st.session_state['folder'] = r''
-    st.session_state['file'] = r'score.csv'
-
-    folder = st.session_state['folder']
-    file = st.session_state['file']
-    score_file = os.path.join(folder, file)
-    st.session_state['score_file'] = score_file
+    # st.session_state['folder'] = r''
+    # st.session_state['file'] = r'score.csv'
+    #
+    # folder = st.session_state['folder']
+    # file = st.session_state['file']
+    # score_file = os.path.join(folder, file)
+    score_file = st.session_state['score_file']
 
     file_exist = os.path.isfile(score_file)
     if file_exist:
@@ -71,9 +71,29 @@ def read_score():
 
 
 def write_score():
-
     score_file = st.session_state['score_file']
     score_df = st.session_state['score_df']
+
+    file_exist = os.path.isfile(score_file)
+    if file_exist:
+        pass
+    else:
+        score_df = pd.DataFrame()
+
+        # score_df = pd.DataFrame(
+        #     0 : ['Group1', 'Group2', 'Group3'],
+        #     0: ['Group1', 'Group2', 'Group3'],
+        # )
+
+        # score_df['Group1'] = [0]
+        # score_df['Group2'] = [0]
+        # score_df['Group3'] = [0]
+        # st.session_state['Group1_Updated_Score'] = 0
+        # st.session_state['Group2_Updated_Score'] = 0
+        # st.session_state['Group3_Updated_Score'] = 0
+
+    st.session_state['score_df'] = score_df
+
     score_df.to_csv(score_file, index=False)
 
     return
@@ -82,17 +102,17 @@ def write_score():
 def get_data():
     import pandas as pd
 
-    st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
-    st.session_state['file'] = r'Kapoot.xlsx'
+    # st.session_state['folder'] = r'C:\Users\e025553\OneDrive - Elbit Systems 365\Documents\Work\StreamLit_Kapoot'
+    # st.session_state['file'] = r'Kapoot.xlsx'
 
-    folder = st.session_state['folder']
-    file = st.session_state['file']
-    xls_file = os.path.join(folder, file)
-    st.session_state['data_file'] = xls_file
+    # folder = st.session_state['folder']
+    file = r'Kapoot.xlsx'
+    # xls_file = os.path.join(folder, file)
+    st.session_state['data_file'] = file
 
-    file_exist = os.path.isfile(xls_file)
+    file_exist = os.path.isfile(file)
     if file_exist:
-        df_xls = pd.read_excel(xls_file)
+        df_xls = pd.read_excel(file)
     else:
         df_xls = pd.DataFrame()
     st.session_state['df_data'] = df_xls
@@ -287,6 +307,9 @@ def sb_scores():
 
     return
 
+wd = os.getcwd()
+st.session_state['working_directory'] = wd
+st.session_state['score_file'] = r'score.csv'
 
 st.session_state['zodiac'] = {
     'דלי': 1,
@@ -384,9 +407,6 @@ st.session_state['shoe_size_to_cm_women'] = {
 
 def get_assets():
 
-    wd = os.getcwd()
-    st.session_state['working_directory'] = wd
-
     img = r'Assets/Pictures/logo.png'
     url = os.path.join(wd, img)
     image = Image.open(url)
@@ -445,7 +465,6 @@ def get_assets():
 
     # Game Pages
     st.session_state['enable_sb_menu'] = True
-
     game_pages = {
         '0': (r'Kapoot.py', 'Home Page'),
         '1': (r'Pages/01_Home_to_Netanel.py', 'Home to Netanel'),
