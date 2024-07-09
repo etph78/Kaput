@@ -499,9 +499,11 @@ def set_sidebar_menu():
         my_files = os.listdir('pages')
         # st.write(my_files)
         # st.write(type(files))
+        my_link = 'Kaput.py'
+        st.sidebar.page_link(my_link, label=my_link)
 
         for my_file in my_files:
-            st.write(my_file)
+            # st.write(my_file)
             my_link = f'pages/{my_file}'
             st.sidebar.page_link(my_link, label=my_link)
 
