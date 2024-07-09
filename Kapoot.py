@@ -498,6 +498,16 @@ def set_sidebar_menu():
     with (st.container()):
         files = os.listdir('Pages')
         st.write(files)
+        st.write(type(files))
+
+        # for key, value in range(length):
+        #     my_page = game_pages[f'{i}']
+        #     st.write(my_page)
+        #     my_link = my_page[0]
+        #     st.write(my_link)
+        #     my_label = my_page[1]
+        #     st.write(my_label)
+        #     st.sidebar.page_link(my_link, label=my_label)
 
         game_pages = st.session_state['game_pages']
         length = len(game_pages)
