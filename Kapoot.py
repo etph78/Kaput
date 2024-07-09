@@ -417,27 +417,27 @@ def get_assets():
 
     # Teams Images
     group1_img = {
-        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Elchai.png')),
-        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Avichai.png')),
-        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Arik.png')),
-        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Ofir.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
     }
     st.session_state['group1_img'] = group1_img
     group2_img = {
-        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Oren.png')),
-        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Maor.png')),
-        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Elad.png')),
-        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Igor.png')),
-        '5': Image.open(os.path.join(wd, r'Assets/Pictures/Shimon.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '5': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
     }
     st.session_state['group2_img'] = group2_img
     group3_img = {
-        '1': Image.open(os.path.join(wd, r'Assets/Pictures/Shelly.png')),
-        '2': Image.open(os.path.join(wd, r'Assets/Pictures/Roy.png')),
-        '3': Image.open(os.path.join(wd, r'Assets/Pictures/Roman.png')),
-        '4': Image.open(os.path.join(wd, r'Assets/Pictures/Liora.png')),
-        '5': Image.open(os.path.join(wd, r'Assets/Pictures/Dvir.png')),
-        '6': Image.open(os.path.join(wd, r'Assets/Pictures/Eytan.png')),
+        '1': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '2': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '3': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '4': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '5': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
+        '6': Image.open(os.path.join(wd, r'Assets/Pictures/logo.png')),
     }
     st.session_state['group3_img'] = group3_img
 
