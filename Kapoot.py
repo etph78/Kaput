@@ -496,13 +496,13 @@ def get_assets():
 
 def set_sidebar_menu():
     with (st.container()):
-        my_files = os.listdir('/pages')
+        my_files = os.listdir('pages')
         # st.write(my_files)
         # st.write(type(files))
 
         for my_file in my_files:
             st.write(my_file)
-            my_link = f'Pages/{my_file}'
+            my_link = f'pages/{my_file}'
             st.sidebar.page_link(my_link, label=my_link)
 
         #     my_page = game_pages[f'{i}']
