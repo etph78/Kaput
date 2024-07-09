@@ -497,9 +497,9 @@ def get_assets():
     return
 
 
-def set_sidebar_menu():
-    with (st.container()):
-        my_files = os.listdir('pages')
+# def set_sidebar_menu():
+#     with (st.container()):
+        # my_files = os.listdir('pages')
         # st.write(my_files)
         # st.write(type(files))
         # my_link = 'Kaput.py'
@@ -518,17 +518,17 @@ def set_sidebar_menu():
         #     st.write(my_label)
         #     st.sidebar.page_link(my_link, label=my_label)
 
-        game_pages = st.session_state['game_pages']
-        length = len(game_pages)
+        # game_pages = st.session_state['game_pages']
+        # length = len(game_pages)
 
-        for i in range(length):
-            my_page = game_pages[f'{i}']
-            # st.write(my_page)
-            my_link = my_page[0]
-            # st.write(my_link)
-            my_label = my_page[1]
-            # st.write(my_label)
-            st.sidebar.page_link(my_link, label=my_label)
+        # for i in range(length):
+        #     my_page = game_pages[f'{i}']
+        #     # st.write(my_page)
+        #     my_link = my_page[0]
+        #     # st.write(my_link)
+        #     my_label = my_page[1]
+        #     # st.write(my_label)
+        #     st.sidebar.page_link(my_link, label=my_label)
 
 
 def main():
